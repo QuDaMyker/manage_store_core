@@ -11,6 +11,10 @@ const supabase = supabaseLib.createClient(
 app.use(express.json());
 app.listen(PORT, () => console.log(`it's alive on http://localhost:${PORT}`));
 
+app.get("/", (req, res) => {
+  res.status(200).send("heelo");
+});
+
 app.get("/tshirt", (req, res) => {
   res.status(200).send({
     tshirt: "🐧",
